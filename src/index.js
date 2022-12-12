@@ -10,9 +10,9 @@ document.getElementById('completedBtn').addEventListener('click', () => {
 
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const todoL = Storage.getToDo();
+  const list = Storage.getToDo();
   const toDoInput = document.getElementById('todo-input').value;
-  const id = todoL.length + 1;
+  const id = list.length + 1;
   const completed = false;
   const todo = new CreateToDo(toDoInput, id, completed);
   DomToDo.addToDoList(todo);

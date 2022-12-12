@@ -1,20 +1,20 @@
 class Storage {
   static getToDo() {
-    let todoL;
-    if (!localStorage.getItem('todoL')) {
-      todoL = [];
+    let list;
+    if (!localStorage.getItem('list')) {
+      list = [];
     } else {
-      todoL = JSON.parse(localStorage.getItem('todoL'));
+      list = JSON.parse(localStorage.getItem('list'));
     }
-    return todoL;
+    return list;
   }
 
   static addTodo(todo) {
-    const todoL = Storage.getToDo();
+    const list = Storage.getToDo();
 
-    todoL.push(todo);
+    list.push(todo);
 
-    localStorage.setItem('todoL', JSON.stringify(todoL));
+    localStorage.setItem('list', JSON.stringify(list));
   }
 
   static remove(id) {
